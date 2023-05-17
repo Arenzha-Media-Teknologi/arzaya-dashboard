@@ -225,11 +225,17 @@ function App() {
     },
   });
 
+  const colors = {
+    "On Progress": "yellow",
+    Completed: "green",
+    default: "grey",
+  };
+
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ["repoData"],
     queryFn: () =>
       fetch(
-        "http://127.0.0.1:8000/api/projects?" +
+        "https://sjl.arzaya.net/api/projects?" +
           new URLSearchParams({
             period: dayjs().format("YYYY-MM"),
           })
@@ -302,6 +308,15 @@ function App() {
                           {dayjs(project?.period1 || null).format("MMMM YYYY")}
                         </Heading>
                       </Box>
+                      <Badge
+                        ml="1"
+                        fontSize="1.5em"
+                        colorScheme={colors[project?.status || "default"]}
+                        px={5}
+                        rounded={5}
+                      >
+                        {project?.status || ""}
+                      </Badge>
                       {/* <Text
                         color="#FFFFFF"
                         fontSize="2xl"
