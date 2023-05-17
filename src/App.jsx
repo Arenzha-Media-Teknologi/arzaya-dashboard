@@ -97,7 +97,7 @@ const LargeJobItem = ({
                 overflowX={"hidden"}
               >
                 <Flex flex="1" gap="4" alignItems="center" flexWrap="nowrap">
-                  <Avatar name={user?.name || "alt"} src="" />
+                  <Avatar name={user?.name || "alt"} src={user?.image || ""} />
                   <Box>
                     <Heading size="sm">{user?.name || "NAMA_USER"}</Heading>
                     <Text>{user?.email}</Text>
