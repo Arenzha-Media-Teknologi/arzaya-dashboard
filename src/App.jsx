@@ -280,7 +280,7 @@ function App() {
         <Swiper
           style={{ width: "100%", height: "100%" }}
           autoplay={{
-            delay: 5000,
+            delay: 10000,
             disableOnInteraction: false,
           }}
           loop={true}
