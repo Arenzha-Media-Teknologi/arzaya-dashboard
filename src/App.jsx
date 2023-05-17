@@ -82,11 +82,20 @@ const LargeJobItem = ({
           <Text fontSize="4xl">
             <strong>{completedItem}</strong>/{totalItem}
           </Text>
-          <Badge colorScheme={colors[status || "default"]}>{status}</Badge>
+          <Badge fontSize="1em" colorScheme={colors[status || "default"]}>
+            {status}
+          </Badge>
         </Flex>
         {Array.isArray(users)
           ? users.map((user) => (
-              <Box mt={4} rounded={4} bgColor="#535c68" p={3} key={user.id}>
+              <Box
+                mt={4}
+                rounded={4}
+                bgColor="#535c68"
+                p={3}
+                key={user.id}
+                overflowX={"hidden"}
+              >
                 <Flex flex="1" gap="4" alignItems="center" flexWrap="nowrap">
                   <Avatar name={user?.name || "alt"} src="" />
                   <Box>
@@ -119,6 +128,12 @@ const SmallJobItem = ({
   status = "",
   users = [],
 }) => {
+  const colors = {
+    "On Progress": "yellow",
+    Completed: "green",
+    default: "grey",
+  };
+
   return (
     <GridItem
       // gridArea="2 / 4 / 3 / 5"
@@ -130,10 +145,18 @@ const SmallJobItem = ({
     >
       <Flex flexDirection="column" justifyContent="space-between" height="100%">
         <Text fontSize="2xl">{title}</Text>
-        <Spacer />
+        {/* <Spacer />
         <Text fontSize="4xl">
           <strong>{completedItem}</strong>/{totalItem}
-        </Text>
+        </Text> */}
+        <Flex alignItems="center" justifyContent="space-between">
+          <Text fontSize="4xl">
+            <strong>{completedItem}</strong>/{totalItem}
+          </Text>
+          <Badge fontSize="1em" colorScheme={colors[status || "default"]}>
+            {status}
+          </Badge>
+        </Flex>
       </Flex>
     </GridItem>
   );
@@ -371,12 +394,14 @@ function App() {
                       title="Pengiriman Data"
                       completedItem={project?.pengiriman_data?.completed_item}
                       totalItem={project?.pengiriman_data?.total_item}
+                      status={project?.pengiriman_data?.status}
                     />
                     <SmallJobItem
                       styles={{ gridArea: "2 / 4 / 3 / 5" }}
                       title="Konfirmasi Proses"
                       completedItem={project?.konfirmasi_proses?.completed_item}
                       totalItem={project?.konfirmasi_proses?.total_item}
+                      status={project?.konfirmasi_proses?.status}
                     />
 
                     {/* <GridItem bg="red" gridArea="1 / 4 / 2 / 5" /> */}
