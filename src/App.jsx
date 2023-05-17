@@ -87,11 +87,11 @@ const LargeJobItem = ({
         {Array.isArray(users)
           ? users.map((user) => (
               <Box mt={4} rounded={4} bgColor="#535c68" p={3} key={user.id}>
-                <Flex flex="1" gap="4" alignItems="center">
+                <Flex flex="1" gap="4" alignItems="center" flexWrap="nowrap">
                   <Avatar name={user?.name || "alt"} src="" />
                   <Box>
                     <Heading size="sm">{user?.name || "NAMA_USER"}</Heading>
-                    <Text textOverflow={"ellipsis"}>{user?.email}</Text>
+                    <Text>{user?.email}</Text>
                   </Box>
                 </Flex>
                 <Text textAlign="end">
