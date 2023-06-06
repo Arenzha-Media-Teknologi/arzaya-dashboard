@@ -98,15 +98,15 @@ function Scoring() {
 
   const navigate = useNavigate();
 
-  // React.useEffect(() => {
-  //   const DURATION = 1000 * 60; // 1 Minute
-  //   let timer = setTimeout(() => {
-  //     navigate("/");
-  //   }, DURATION);
-  //   return () => {
-  //     clearTimeout(timer);
-  //   };
-  // }, []);
+  React.useEffect(() => {
+    const DURATION = 1000 * 60; // 1 Minute
+    let timer = setTimeout(() => {
+      navigate("/");
+    }, DURATION);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
 
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ["rankings"],
