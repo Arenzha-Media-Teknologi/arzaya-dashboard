@@ -14,14 +14,17 @@
     "@chakra-ui/react": "^2.5.1",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@fontsource-variable/inter": "^5.0.2",
     "@tanstack/react-query": "^4.29.7",
     "apexcharts": "^3.37.1",
+    "confetti-js": "^0.0.18",
     "dayjs": "^1.11.7",
     "framer-motion": "^10.2.3",
     "react": "^18.2.0",
     "react-apexcharts": "^1.4.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
+    "react-router-dom": "^6.11.2",
     "swiper": "^9.1.0"
   },
   "devDependencies": {
